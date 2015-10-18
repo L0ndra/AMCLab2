@@ -1,0 +1,75 @@
+﻿@model AMCLab2.Models.Model
+
+<style type="text/css">
+    table {
+        border-collapse:collapse;
+    }
+    td, th {
+        padding: 3px;
+        border: 1px solid black;
+    }
+</style>
+<h1>IterateMethod</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Eps</th>
+            <th>x</th>
+            <th>Оцінка точності</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 5; i++)
+        {
+            <tr>
+                <td>@Model.IM.Table[i].Eps</td>
+                <td>@Model.IM.Table[i].X</td>
+                <td>@Model.IM.Table[i].Acc</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h1>TouchingMethod</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Eps</th>
+            <th>x</th>
+            <th>Оцінка точності</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 5; i++)
+        {
+            <tr>
+                <td>@Model.TM.Table[i].Eps</td>
+                <td>@Model.TM.Table[i].X</td>
+                <td>@Model.TM.Table[i].Acc</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h1>Speed</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Eps</th>
+            <th>IM</th>
+            <th>TM</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < 5; i++)
+        {
+            <tr>
+                <td>@Model.TM.Table[i].Eps</td>
+                <td>@Model.IM.Table[i].N</td>
+                <td>@Model.TM.Table[i].N</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
